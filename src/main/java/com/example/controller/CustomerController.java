@@ -3,6 +3,7 @@ package com.example.controller;
 import com.example.model.Customer;
 import com.example.repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -25,6 +26,7 @@ public class CustomerController
   }
 
   @RequestMapping(value = "/customers/create", method = RequestMethod.POST)
+  @Secured({"ROLE_ADMIN"})
   public ModelAndView createCustomer(String firstname, String lastname)
   {
     Customer customer = new Customer();
