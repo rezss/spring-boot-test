@@ -50,6 +50,10 @@
       <artifactId>spring-boot-starter-actuator</artifactId>
     </dependency>
     <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-remote-shell</artifactId>
+    </dependency>
+    <dependency>
       <groupId>org.webjars</groupId>
       <artifactId>jquery-mobile</artifactId>
       <version>1.4.5</version>
