@@ -4,6 +4,7 @@ import com.example.repository.CustomerRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.actuate.metrics.CounterService;
 import org.springframework.scheduling.annotation.Scheduled;
 
 public class CheckDatabaseSchedule
@@ -13,6 +14,9 @@ public class CheckDatabaseSchedule
   @Autowired
   CustomerRepository repository;
 
+  @Autowired
+  CounterService counterService;
+
   @Scheduled(initialDelay = 1000, fixedDelay = 10000)
   public void run()
   {
@@ -20,5 +24,7 @@ public class CheckDatabaseSchedule
 
     if (repository.count() <= 0)
       log.warn("Database is empty for customers");
+
+    counterService.increment("database.check");
   }
 }
