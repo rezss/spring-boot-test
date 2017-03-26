@@ -1,17 +1,13 @@
 package com.example.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 
-@Entity
 public class Checkout
 {
   @Id
-  @GeneratedValue
-  private Long id;
-  @OneToOne
+  private String id;
+  @DBRef
   private Customer customer;
 
   public Customer getCustomer()

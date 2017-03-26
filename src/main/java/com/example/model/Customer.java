@@ -1,30 +1,31 @@
 package com.example.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import org.springframework.data.annotation.Id;
 
-@Entity
-public class Customer {
-    @Id
-    @GeneratedValue
-    private Long id;
-    private String firstname;
-    private String lastname;
+public class Customer
+{
+  @Id
+  private String id;
+  private String firstname;
+  private String lastname;
 
-    public String getFirstname() {
-        return firstname;
-    }
+  public String getFirstname()
+  {
+    return firstname;
+  }
 
-    public void setFirstname(String firstname) {
-        this.firstname = firstname;
-    }
+  public void setFirstname(String firstname)
+  {
+    this.firstname = firstname;
+  }
 
-    public String getLastname() {
-        return lastname;
-    }
+  public String getLastname()
+  {
+    return lastname;
+  }
 
-    public void setLastname(String lastname) {
-        this.lastname = lastname;
-    }
+  public void setLastname(String lastname)
+  {
+    this.lastname = lastname;
+  }
 }
