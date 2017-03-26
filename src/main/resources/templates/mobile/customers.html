@@ -1,0 +1,21 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <link rel="stylesheet" href="webjars/jquery-mobile/1.4.5/jquery.mobile.min.css" />
+  <script src="webjars/jquery/2.1.1/jquery.min.js"></script>
+  <script src="webjars/jquery-mobile/1.4.5/jquery.mobile.min.js"></script>
+</head>
+<body>
+  <table data-role="table" data-mode="columntoggle">
+    <thead>
+    <th>Fistname</th>
+    <th data-priority="1">Lastname</th>
+    </thead>
+    <tbody>
+    <tr th:each="c:${customers}">
+      <td th:text="${c.firstname}"></td>
+      <td th:text="${c.lastname}"></td>
+    </tr>
+    </tbody>
+  </table>
+</body>
+</html>
